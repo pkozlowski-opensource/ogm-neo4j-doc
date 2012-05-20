@@ -1,13 +1,12 @@
-JPA entities to Neo4j mapping (Hibernate OGM)
-================================
+<h1>JPA entities to Neo4j mapping (Hibernate OGM)</h1>
 This page describes mapping strategies for JPA entities and their relationships. 
 This is work in progress done in the context of the Hibernate OGM (http://www.hibernate.org/subprojects/ogm.html) project. It aims at illustrating decisions taken thus far as well as highlight issues to address.
 
-Simple entities (without relationships)
+<h2>Simple entities (without relationships)</h2>
 -------------------------
 Let's assume that we've got a simple entity illustrated in the code snippet below (constructors as well as getters / setters omitted):
 
-```java
+<code>
 @Entity
 public class SimpleEntity {
 
@@ -15,6 +14,9 @@ public class SimpleEntity {
 	private String id;
 	private String name;
 }
-```
+<code>
 
-![Alt text](mappingSimpleEntity.png)
+Persisting this entity in Neo4j via Hibernate OGM will create following nodes / relationships in a freshly created Neo4j database:
+
+(mappingSimpleEntity.png)
+
